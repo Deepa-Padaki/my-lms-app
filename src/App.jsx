@@ -8,6 +8,7 @@ import CourseList from './components/CourseList';
 import CourseDetail from './components/CourseDetail';
 import LearningPage from './components/LearningPage';
 import MyLearning from './components/MyLearning';
+import FriendliAI from './components/FriendliAI';
 import './App.css';
 
 function PrivateRoute({ children }) {
@@ -51,6 +52,7 @@ function App() {
               />
             </Routes>
           </main>
+          <FriendliAI />
         </div>
       </Router>
     </AuthProvider>
