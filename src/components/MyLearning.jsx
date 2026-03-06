@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import './MyLearning.css';
 
-const API_URL = 'https://lms-backend-33rj.onrender.com/api';
+const API_URL = 'https://backend-lms-setup.onrender.com/api';
 
 export default function MyLearning() {
   const [enrollments, setEnrollments] = useState([]);

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const AuthContext = createContext(null);
 
-const API_URL = 'https://lms-backend-33rj.onrender.com/api';
+const API_URL = 'https://backend-lms-setup.onrender.com/api';
 console.log('API_URL:', API_URL);
 
 export function AuthProvider({ children }) {
