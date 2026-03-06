@@ -54,7 +54,7 @@ export default function FriendliAI() {
         body: JSON.stringify({
           model: 'meta-llama-3.1-8b-instruct',
           messages: [
-            { role: 'system', content: 'You are a helpful AI assistant for a Learning Management System. Help students with their questions about courses, programming, and learning.' },
+            { role: 'system', content: 'You are a helpful AI assistant for a Learning Management System. Help students with their questions about courses, programming, and learning. Format your responses with clear bullet points, numbered lists, or short paragraphs. Use markdown formatting with headers, bold text, and line breaks to make the content easy to read. Always structure your answers in a disciplined, organized manner with proper spacing between points.' },
             ...messages.map(m => ({ role: m.role, content: m.content })),
             { role: 'user', content: input }
           ],

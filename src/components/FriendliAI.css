@@ -161,6 +161,47 @@
   background: #f5f5f5;
   color: #333;
   border-bottom-left-radius: 4px;
+  white-space: pre-wrap;
+}
+
+/* Markdown formatting for AI responses */
+.friendli-message.assistant .friendli-message-content ul,
+.friendli-message.assistant .friendli-message-content ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.friendli-message.assistant .friendli-message-content li {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.friendli-message.assistant .friendli-message-content p {
+  margin: 12px 0;
+}
+
+.friendli-message.assistant .friendli-message-content strong {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.friendli-message.assistant .friendli-message-content h1,
+.friendli-message.assistant .friendli-message-content h2,
+.friendli-message.assistant .friendli-message-content h3 {
+  margin: 16px 0 12px 0;
+  font-weight: 600;
+}
+
+.friendli-message.assistant .friendli-message-content h1 {
+  font-size: 20px;
+}
+
+.friendli-message.assistant .friendli-message-content h2 {
+  font-size: 18px;
+}
+
+.friendli-message.assistant .friendli-message-content h3 {
+  font-size: 16px;
 }
 
 /* Loading Animation */
