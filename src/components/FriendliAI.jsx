@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { marked } from 'marked';
 import './FriendliAI.css';
 
 const FRIENDLI_API_KEY = import.meta.env.VITE_FRIENDLI_API_KEY || '';
@@ -152,9 +153,12 @@ export default function FriendliAI() {
               ) : (
                 messages.map((msg, index) => (
                   <div key={index} className={`friendli-message ${msg.role}`}>
-                    <div className="friendli-message-content">
-                      {msg.content}
-                    </div>
+                    <div 
+                      className="friendli-message-content"
+                      dangerouslySetInnerHTML={{ 
+                        __html: msg.role === 'assistant' ? marked.parse(msg.content) : msg.content 
+                      }}
+                    />
                   </div>
                 ))
               )}
