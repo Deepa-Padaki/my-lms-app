@@ -4,6 +4,7 @@ import axios from 'axios';
 const AuthContext = createContext(null);
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+console.log('API_URL:', API_URL);
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
@@ -41,12 +42,18 @@ export function AuthProvider({ children }) {
   };
 
   const signup = async (name, email, password, role = 'student') => {
-    const response = await axios.post(`${API_URL}/auth/signup`, { name, email, password, role });
-    const { token, user } = response.data;
-    localStorage.setItem('token', token);
-    axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    setUser(user);
-    return user;
+    try {
+      console.log('Signup attempt to:', `${API_URL}/auth/signup`);
+      const response = await axios.post(`${API_URL}/auth/signup`, { name, email, password, role });
+      const { token, user } = response.data;
+      localStorage.setItem('token', token);
+      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+      setUser(user);
+      return user;
+    } catch (error) {
+      console.error('Signup error:', error.message);
+      throw error;
+    }
   };
 
   const logout = () => {
